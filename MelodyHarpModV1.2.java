@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 @Mod(modid = "melodymod", version = "1.0", acceptedMinecraftVersions = "[1.8.9]")
 public class MelodyMod {
@@ -57,3 +58,12 @@ public class MelodyMod {
     } 
   }
 }
+
+
+  
+  public boolean harpGuiIsOpen() {
+    if (this.mc.field_71439_g.field_71070_bA instanceof ContainerChest)
+      return ((ContainerChest)this.mc.field_71439_g.field_71070_bA).func_85151_d().func_70005_c_().startsWith("Harp - "); 
+    return false;
+
+  }
